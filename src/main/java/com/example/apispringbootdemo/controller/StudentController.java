@@ -14,7 +14,7 @@ public class StudentController { //Request API , Response API
 
     private final StudentService studentService;
 
-    @Autowired //StudentService auto wired inject into StudentController
+    @Autowired //StudentService auto wired inject into StudentController (Dependency Injection)
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
