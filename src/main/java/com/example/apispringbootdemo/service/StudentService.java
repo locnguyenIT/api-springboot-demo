@@ -15,7 +15,7 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    @Autowired //studentRepository auto wired inject into StudentService
+    @Autowired //studentRepository auto wired inject into StudentService (Dependency Injection)
     public StudentService(StudentRepository repository) {
         this.studentRepository = repository;
     }
