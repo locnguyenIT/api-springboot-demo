@@ -1,5 +1,4 @@
 # api-springboot-demo
 ## Spring Boot | Spring Data JPA | Hibernate
-
-![Screenshot 2021-10-07 192743](https://user-images.githubusercontent.com/86077654/136383971-d2965281-1047-400c-bd66-18a8f0da9697.png)
+![Screenshot 2021-10-07 195245](https://user-images.githubusercontent.com/86077654/136387808-b53200a8-3266-4b4f-af11-5d9ca80f5565.png)
 
