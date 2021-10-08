@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController //This annotation make this class request API from client
+@RestController //This annotation make this class request/response API from client
 @RequestMapping(path = "/api/spring-boot/student") //mapping to the endpoint url
 public class StudentController { //Request API , Response API
 
