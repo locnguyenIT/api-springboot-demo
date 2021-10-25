@@ -39,19 +39,19 @@ public class StudentController { //Request API , Response API
         return studentService.getStudentById(studentId);
     }
 
-    @PostMapping //POST student
+    @PostMapping(path = "/add") //POST student
     public void addStudent(@RequestBody Student student) //@RequestBody is take the request body client and map it into a student
     {
         studentService.addStudent(student);
     }
 
-    @DeleteMapping(path = "/{studentId}") //Delete student with studentId
+    @DeleteMapping(path = "/delete/{studentId}") //Delete student with studentId
     public void deleteStudent(@PathVariable("studentId") Integer studentId) //@PathVariable is extract the values (studentID) from the URL
     {
         studentService.deleteStudent(studentId);
     }
 
-    @PutMapping(path = "/{studentId}") //Update student with studentId
+    @PutMapping(path = "update/{studentId}") //Update student with studentId
     public void updateStudent(@PathVariable("studentId") Integer studentId, //@PathVariable is extract the values (studentID) from the URL
                               @RequestParam(required = false) String name,  //@RequestParam is extract the query parameters from the URL. required = false mean is not required have parameter
                               @RequestParam(required = false) String email) //@RequestParam is extract the query parameters from the URL. required = false mean is not required have parameter
