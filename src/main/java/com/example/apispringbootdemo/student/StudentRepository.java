@@ -1,4 +1,4 @@
-package com.example.apispringbootdemo.repository;
+package com.example.apispringbootdemo.student;
 
 import com.example.apispringbootdemo.student.Student;
 import org.springframework.data.jpa.repository.JpaRepository;

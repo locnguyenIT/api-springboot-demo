@@ -1,6 +1,6 @@
-package com.example.apispringbootdemo.controller;
+package com.example.apispringbootdemo.student;
 
-import com.example.apispringbootdemo.service.StudentService;
+import com.example.apispringbootdemo.student.StudentService;
 import com.example.apispringbootdemo.student.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;

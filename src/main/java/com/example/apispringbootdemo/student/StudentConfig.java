@@ -1,6 +1,6 @@
-package com.example.apispringbootdemo.config;
+package com.example.apispringbootdemo.student;
 
-import com.example.apispringbootdemo.repository.StudentRepository;
+import com.example.apispringbootdemo.student.StudentRepository;
 import com.example.apispringbootdemo.student.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -26,8 +26,20 @@ public class StudentConfig {
                     "Tran Ha Linh",
                     "halinh@gmail.com",
                     LocalDate.of(2002, Month.DECEMBER, 12));
+            Student hoang = new Student(
+                    "Nguyen Huy Hoang",
+                    "hoang@gmail.com",
+                    LocalDate.of(1998, Month.OCTOBER, 19));
+            Student thao = new Student(
+                    "Phung Hoai Thao",
+                    "thao@gmail.com",
+                    LocalDate.of(2001, Month.JUNE, 06));
+            Student hung = new Student(
+                    "Nguyen Nam Hung ",
+                    "hung@gmail.com",
+                    LocalDate.of(2000, Month.JULY, 15));
 
-            repository.saveAll(List.of(loc,linh));
+            repository.saveAll(List.of(loc,linh,hoang,thao,hung));
         };
     }
 }
