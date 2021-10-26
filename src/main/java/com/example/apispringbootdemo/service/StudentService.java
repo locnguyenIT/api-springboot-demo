@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -67,7 +69,7 @@ public class StudentService {
     }
 
     @Transactional
-    public void updateStudent(Integer studentId, String name, String email)
+    public void updateStudent(Integer studentId, String name, String email, LocalDate dob)
     {
         //Check studentId in database
         Student student = studentRepository.findById(studentId).orElseThrow(()
@@ -86,6 +88,11 @@ public class StudentService {
             }
             student.setEmail(email);
         }
+        if(dob != null && !Objects.equals(student.getDob(),dob)) //if the new name has been provided is not the same name in database
+        {
+            student.setDob(dob);
+        }
     }
+
 
 }

@@ -3,8 +3,10 @@ package com.example.apispringbootdemo.controller;
 import com.example.apispringbootdemo.service.StudentService;
 import com.example.apispringbootdemo.student.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,7 +16,7 @@ public class StudentController { //Request API , Response API
 
     private final StudentService studentService;
 
-    @Autowired //StudentService auto wired inject into StudentController (Dependency Injection)
+    @Autowired //StudentService autowired inject into StudentController (Dependency Injection)
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
@@ -54,8 +56,16 @@ public class StudentController { //Request API , Response API
     @PutMapping(path = "update/{studentId}") //Update student with studentId
     public void updateStudent(@PathVariable("studentId") Integer studentId, //@PathVariable is extract the values (studentID) from the URL
                               @RequestParam(required = false) String name,  //@RequestParam is extract the query parameters from the URL. required = false mean is not required have parameter
-                              @RequestParam(required = false) String email) //@RequestParam is extract the query parameters from the URL. required = false mean is not required have parameter
+                              @RequestParam(required = false) String email,
+                              @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dob) //@RequestParam is extract the query parameters from the URL. required = false mean is not required have parameter
     {
-        studentService.updateStudent(studentId,name,email);
+        studentService.updateStudent(studentId,name,email,dob);
     }
+
+//    @PutMapping(path = "update/{studentId}") //Update student with studentId
+//    public void updateStudent(@PathVariable("studentId") Integer studentId, @RequestBody Student student) //@PathVariable is extract the values (studentID) from the URL
+//
+//    {
+//        studentService.updateStudent(studentId,student);
+//    }
 }
